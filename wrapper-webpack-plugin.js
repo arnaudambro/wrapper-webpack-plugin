@@ -33,7 +33,7 @@ class WrapperPlugin {
 
 		compiler.hooks.compilation.tap('WrapperPlugin', (compilation) => {
 			if (this.afterOptimizations) {
-				compilation.hooks.afterOptimizeChunkAssets.tap('WrapperPlugin', (chunks) => {
+				compilation.hooks.afterOptimizeAssets.tap('WrapperPlugin', (chunks) => {
 					wrapChunks(compilation, chunks, footer, header);
 				});
 			} else {
